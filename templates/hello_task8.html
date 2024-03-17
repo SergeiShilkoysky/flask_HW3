@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+{{ super() }} - {{ title }}
+{% endblock %}
+
+
+{% block content %}
+<form action="/users/" class="btn btn-primary">
+    <button type="submit">get all users</button>
+</form>
+<div style="display: flex; justify-content: center; align-items: center; height:87vh; ">
+    <form method="post">
+        <h1>Welcome, {{ name }} {{ surname }} !</h1>
+
+        <div style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+            <form action="{{ url_for('index') }}" method="post">
+                <button type="submit" class="btn btn-primary" style="width: 90px;">Выйти</button>
+            </form>
+        </div>
+    </form>
+
+</div>
+
+{% endblock %}

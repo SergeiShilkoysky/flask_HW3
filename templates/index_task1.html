@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ super() }} - {{ title }}
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    {% for st in student %}
+    <p>Имя: {{st.name}}<br>
+        Фамилия: {{ st.last_name }}<br>
+        Возраст: {{st.age}}<br>
+        Пол: {{st.gender}}<br>
+        Группа: {{st.group}}<br>
+        Id факультета: {{st.fags_id}}<br>
+        Имя факультета__: {{st.fags.fag_name}}<br>
+        <!--        т.е. по id факультета мы получаем название (обратная связь buckref!))-->
+    </p>
+    {% endfor %}
+</div>
+{% endblock %}

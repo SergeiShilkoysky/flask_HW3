@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ super() }} - {{ title }}
+{% endblock %}
+
+
+{% block content %}
+<div class="row" weidth=80hv>
+    <h4>Registered of users</h4>
+    <table border="solid">
+        <tr>
+            <th> Имя</th>
+            <th> Фамилия</th>
+            <th> пол</th>
+            <th> email</th>
+            <th> пароль в системе</th>
+            {% for user in users %}
+        <tr>
+            <td>{{user.name}}</td>
+            <td>{{user.surname}}</td>
+            <td>{{user.gender}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.password}}</td>
+        </tr>
+        <!--         <li>{{user}}: <br></li>-->
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}
